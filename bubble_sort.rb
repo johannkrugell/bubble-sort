@@ -1,30 +1,31 @@
-test_array = [2,1]
+test_array = [4,3,78,2,0,2]
 #4,3,78,2,0,2
 #1,2,3,4,5,6
 
 def bubble_sort(array_to_sort)
-# check if the array is sorted or unsorted  
- p array_to_sort.each_with_index.any? { |number, index| 
-    if index < array_to_sort.length-1
-      number > array_to_sort[index+1]  
+  i = 0
+  while i < array_to_sort.length ** 2 do array_to_sort.each_with_index { |number, index|       
+    if index+1 < array_to_sort.length 
+        var1 = array_to_sort[index]
+        var2 = array_to_sort[index+1]
+    if number > array_to_sort[index+1] && index+1 < array_to_sort.length
+        array_to_sort[index]= var2
+        array_to_sort[index+1] = var1  
+        array_to_sort      
+    elsif
+      number < array_to_sort[index+1] && index+1 < array_to_sort.length
+      number = number
+    else
+       number = number
     end
-    }
-# basic logic to swap two elements
- updated_order = array_to_sort.each_with_index.map { |number, index| p 
-  if index-1 < 0 
-   index+1
-  else
-   index-1 
-  end
-  }
+    else
+      array_to_sort
+    end 
   
-  new_array = []
-  updated_order.each { |order| order 
-    p order
-  new_array.push(array_to_sort.at(order))
-  p new_array
-}
-  p new_array
+    i += 1
+  }
+  end
+  return array_to_sort
 end
 
-bubble_sort(test_array)
+p bubble_sort(test_array)
